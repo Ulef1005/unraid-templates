@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<CommunityApplications>
+  <Profile>
+Templates for **Brick Work**, a free, open-source workbench for a brick collection: check a set's parts, pull the missing parts from your loose stock, and see which unfinished sets that stock can complete.
+
+Questions and help: [GitHub Discussions](https://github.com/Ulef1005/brick-work/discussions). Bugs: [GitHub issues](https://github.com/Ulef1005/brick-work/issues).
+  </Profile>
+  <Icon>https://raw.githubusercontent.com/Ulef1005/brick-work/main/static/brickwork/icons/icon-512.png</Icon>
+  <WebPage>https://github.com/Ulef1005/brick-work</WebPage>
+  <Video>https://www.youtube.com/watch?v=R5Q_6GUB1OQ</Video>
+</CommunityApplications>

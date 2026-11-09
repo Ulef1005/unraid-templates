@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>brick-work</Name>
+  <Repository>ghcr.io/ulef1005/brick-work:latest</Repository>
+  <Registry>https://github.com/Ulef1005/brick-work/pkgs/container/brick-work</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Icon>https://raw.githubusercontent.com/Ulef1005/brick-work/main/static/brickwork/icons/icon-512.png</Icon>
+  <WebUI>http://[IP]:[PORT:3333]/</WebUI>
+  <Overview>Brick Work is a workbench for your brick collection. Besides inventory it helps at the table: check a set's parts (Set Inspector), pull the missing parts of many sets from your sorted bulk in one pass (Part Runner), and see which unfinished sets your loose stock can complete (Matchmaker). Sets, minifigures, parts, instructions, boxes, storage, wishlist, prices and orders in one place; import from Brickset, Rebrickable, BrickLink and BrickTracker; a REST API, a CLI and an MCP server. Free and open source (MIT), single user, no account, no telemetry.
+
+First start: set a password below, start the container, then open its Console once and run: brickwork setup
+Then open the WebUI, sign in and press Download the catalogue (no key needed).
+
+Known issues: the Console step goes away once https://github.com/Ulef1005/brick-work/issues/266 lands; a "Control server error: Permission denied" line in the log at each start is harmless and tracked in https://github.com/Ulef1005/brick-work/issues/265.
+
+The container runs as nobody:users (99:100), so the appdata folder must be writable by that user, as Unraid's appdata is by default. Meant for your home network or a VPN, not the open internet. Not affiliated with the LEGO Group.</Overview>
+  <Support>https://github.com/Ulef1005/brick-work/discussions</Support>
+  <Project>https://github.com/Ulef1005/brick-work</Project>
+  <TemplateURL>https://raw.githubusercontent.com/Ulef1005/unraid-templates/main/templates/brick-work.xml</TemplateURL>
+  <ReadMe>https://raw.githubusercontent.com/Ulef1005/brick-work/main/README.md</ReadMe>
+  <Category>Tools:Utilities</Category>
+  <ExtraSearchTerms>lego brick collection inventory bricklink rebrickable brickset afol sets parts minifigures</ExtraSearchTerms>
+  <Requires>Internet access for the catalogue download (Rebrickable's public files, no key).</Requires>
+  <License>MIT</License>
+  <Screenshot>https://raw.githubusercontent.com/Ulef1005/brick-work/main/docs/img/readme/1c-sets-desktop-1440-light.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/Ulef1005/brick-work/main/docs/img/readme/3c-picker-pick-390-light.png</Screenshot>
+  <Video>https://www.youtube.com/watch?v=R5Q_6GUB1OQ</Video>
+  <ExtraParams>--user 99:100</ExtraParams>
+  <Config Name="WebUI port" Target="3333" Default="3333" Mode="tcp" Description="Port of the web interface, the API and the MCP over HTTP." Type="Port" Display="always" Required="true" Mask="false">3333</Config>
+  <Config Name="Data" Target="/app/data" Default="/mnt/user/appdata/brick-work" Mode="rw" Description="Your collection, the catalogue, photos and PDFs. Back up this folder." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/brick-work</Config>
+  <Config Name="Password" Target="BW_AUTHENTICATION_PASSWORD" Default="" Mode="" Description="Required: the password to sign in. Without one the server refuses to start." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+</Container>
