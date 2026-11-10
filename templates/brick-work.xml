@@ -10,10 +10,7 @@
   <WebUI>http://[IP]:[PORT:3333]/</WebUI>
   <Overview>Brick Work is a workbench for your brick collection. Besides inventory it helps at the table: check a set's parts (Set Inspector), pull the missing parts of many sets from your sorted bulk in one pass (Part Runner), and see which unfinished sets your loose stock can complete (Matchmaker). Sets, minifigures, parts, instructions, boxes, storage, wishlist, prices and orders in one place; import from Brickset, Rebrickable, BrickLink and BrickTracker; a REST API, a CLI and an MCP server. Free and open source (MIT), single user, no account, no telemetry.
 
-First start: set a password below, start the container, then open its Console once and run: brickwork setup
-Then open the WebUI, sign in and press Download the catalogue (no key needed).
-
-Known issues: the Console step goes away once https://github.com/Ulef1005/brick-work/issues/266 lands; a "Control server error: Permission denied" line in the log at each start is harmless and tracked in https://github.com/Ulef1005/brick-work/issues/265.
+First start: set a password below and start the container; it creates your empty collection on its own. Then open the WebUI, sign in and press Download the catalogue (no key needed).
 
 The container runs as nobody:users (99:100), so the appdata folder must be writable by that user, as Unraid's appdata is by default. Meant for your home network or a VPN, not the open internet. Not affiliated with the LEGO Group.</Overview>
   <Support>https://github.com/Ulef1005/brick-work/discussions</Support>
